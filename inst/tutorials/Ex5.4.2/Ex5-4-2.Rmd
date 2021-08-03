@@ -8,6 +8,8 @@ runtime: shiny_prerendered
 
 ```{r setup, include=FALSE}
 library(learnr)
+library(gradethis)
+tutorial_options(exercise.checker = gradethis::grade_learnr) 
 knitr::opts_chunk$set(echo = FALSE)
 library(tidyverse)
 library(nycflights13)
@@ -20,8 +22,28 @@ library(nycflights13)
 
 Find all flights that arrived on Christmas Eve (24th December)
 
+
+
 ```{r 1d, exercise=TRUE}
+filter(  YOU_NEED_AN_ARGUMENT_HERE  ,   YOU_NEED_AN_ARGUMENT_HERE   )
+```
+```{r 1d-hint-1}
+"Experiment with the filter() function"
+
+```
+```{r 1d-hint-2}
+"Remember that filter() takes the data set as the first argument and then some set of conditions to filter on as the second argument"
+
+```
+
+
+```{r 1d-solution }
 filter(flights, month == 12 & day == 24)
+
+```
+```{r 1d-check}
+gradethis::grade_code()
+
 ```
 
 
@@ -31,10 +53,28 @@ filter(flights, month == 12 & day == 24)
 
 Find all flights with missing dep_delay, and arr_delay  
 
+
 ```{r 2d, exercise=TRUE}
-filter(flights, is.na(dep_delay)&is.na(arr_delay))
+filter(  YOU_NEED_AN_ARGUMENT_HERE  ,   YOU_NEED_AN_ARGUMENT_HERE   )
+```
+```{r 2d-hint-1}
+"Experiment with the filter() function"
+
+```
+```{r 2d-hint-2}
+"Remember that filter() takes the data set as the first argument and then some set of conditions to filter on as the second argument"
+
 ```
 
+
+```{r 2d-solution }
+filter(flights, is.na(dep_delay)&is.na(arr_delay))
+
+```
+```{r 2d-check}
+gradethis::grade_code()
+
+```
 ## Advanced
 
 ### Exercise 3
@@ -100,6 +140,62 @@ Missing data in the flights dataset would suggest the flight being cancelled so 
 
 ```
 
+
+## Yuji
+## Easy
+### Exercise 1
+
+In this execise, we are going to use filter(). run the code below to get the information of that. 
+```{r 1, exercise=TRUE, exercise.eval=TRUE}
+?filter()
+```
+
+
+## Intermediate
+### Exercise 2
+
+Find all flights that depart from LGA and EWR
+```{r 3, exercise=TRUE, exercise.eval=TRUE}
+
+```
+
+## Advance
+### Exercise 3
+
+Find same flights that code below represents using !()
+```{r 5, exercise=TRUE, exercise.eval=TRUE}
+filter(flights, arr_delay > 60, dep_delay > 60)
+```
+
+## Easy
+
+### question 1
+
+Write the code to find the flights that had an arrival delay of 60 minutes or more.
+
+```{r two-plus-two, exercise=TRUE}
+
+```
+
+## Moderate 
+
+### question 2
+
+wirte the code to find flights that departed between January and August
+
+```{r two-plus-three, exercise=TRUE}
+
+```
+
+## Hard
+
+### question 
+
+find the flights that Departed between midnight and 7am (inclusive).
+
+```{r two-plus-four, exercise=TRUE}
+
+```
 
 
 

@@ -1,0 +1,173 @@
+---
+title: "Exercise for Section 5.4.1"
+output: learnr::tutorial
+runtime: shiny_prerendered
+---
+
+
+```{r setup, include=FALSE}
+library(learnr)
+knitr::opts_chunk$set(echo = FALSE)
+library(tidyverse)
+library(nycflights13)
+```
+
+## Dang
+## Easy
+
+### Exercise 1  
+
+Rename air_time column to airtime 
+
+```{r 1_d, eval=FALSE, exercise=TRUE, include=FALSE}
+rename(flights, airtime=air_time)
+```
+
+
+##  Intermediate
+
+### Exercise 2
+
+Select all columns except year, month, day column  
+
+```{r 2_d, exercise=TRUE}
+select(flights, !c(year, month, day))
+```
+
+## Advanced
+
+### Exercise 3
+
+Select all columns not containing the word "time"
+
+```{r 3_d, exercise=TRUE}
+select(flights, !contains("time"))
+```
+
+## Yuji
+## Easy
+### Exercise 1
+
+Run ?select() to learn it.
+```{r 1_y, exercise=TRUE, exercise.eval=TRUE}
+
+```
+
+## Intermediate
+### Exercise 2
+
+Select one column on the "flights"
+```{r 2_y, exercise=TRUE, exercise.eval=TRUE}
+
+```
+
+
+## Advance
+### Exercise 3
+
+Select the variable called "day" using starts_with(), ends_with(), contains().
+The argument of each function must be one alphabet.
+
+```{r 5_y, exercise=TRUE, exercise.eval=TRUE}
+```
+
+
+## Kamal
+
+## Easy
+
+### question 1
+
+Use any_of () function to find dep_delay and dep_time vectors. Hint: use any_of(c(    )))
+
+```{r two-plus-two, exercise=TRUE}
+
+```
+
+## modrate
+
+### question 2
+
+find the vectors dep_time, dep_delay, arr_time, arr_delay without using dep_time, dep_delay, arr_time, arr_delay in the function.
+
+```{r two-plus-three, exercise=TRUE}
+
+```
+
+## Hard
+
+### question 3
+
+use the !! operator in a function to find the vectors of "dep_time", "dep_delay", "arr_time", "arr_delay".
+
+```{r two-plus-four, exercise=TRUE}
+
+```
+
+
+## Soujanya
+## Easy 
+
+### Question 1 (Quiz type)
+
+*we will be using the nycflights database in these exercises*
+
+```{r quiz}
+quiz(
+  question(" The ______ operator allows you to string operations in a left-to-right fashion.",
+    answer("This %<%"),
+    answer("This %%%"),
+    answer("This %>%", correct = TRUE),
+    answer("This >%>%")
+  )
+)
+```
+
+```{r quiz2}
+quiz(
+  question(" Which of the following return a subset of the columns of a data frame?",
+    answer("get"),
+    answer("select", correct = TRUE),
+    answer("set"),
+    answer("retrieve")
+  )
+)
+```
+
+
+## Intermediate
+
+### Question 2
+
+*These questions will be in parts *
+Part1: Make a new variable called delay which will be the total delay from departure to arrival.
+Part2: Since we donot want some variables like arr_time, dep_time etc., let's drop it.
+
+```{r flights, exercise=TRUE, exercise.eval=TRUE}
+?flights
+
+```
+
+```{r flights-hint}
+library(tidyverse)
+library(nycflights13)
+flights$delay <- flights$arr_delay + flights$dep_delay
+select(flights, -c(arr_delay,dep_delay))
+```
+
+## Challenging
+
+### Question 3
+
+Let's remove all the time variables. Can we use any_of to do the same?
+
+```{r Remove, exercise=TRUE, exercise.eval=TRUE}
+
+```
+
+```{r Remove-hint}
+select(flights, -contains("time"))
+```
+
+
+
